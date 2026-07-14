@@ -1,0 +1,33 @@
+{
+  "diagnostics": {
+    "errors": [],
+    "warnings": [
+      {
+        "code": "W-001",
+        "message": "spec '002-launch-content' directory unit 'src/content/' is not a directory",
+        "path": "src/content/"
+      }
+    ]
+  },
+  "mapping": {
+    "dependsOn": [
+      "001-site-scaffold"
+    ],
+    "implementingPaths": [],
+    "resolvedUnits": [
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "directory",
+          "path": "src/content/"
+        }
+      }
+    ],
+    "specId": "002-launch-content",
+    "specStatus": "approved"
+  },
+  "schemaVersion": "1.1.0",
+  "shardHash": "6761b380e25f18d2288b7dd59f0ae7ea92783b99e248d05d37c8adbb29191afc"
+}

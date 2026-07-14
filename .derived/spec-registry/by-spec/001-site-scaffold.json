@@ -1,0 +1,45 @@
+{
+  "record": {
+    "created": "2026-07-14",
+    "dependsOn": [
+      "000-bootstrap"
+    ],
+    "establishes": [
+      {
+        "kind": "file",
+        "path": "package.json"
+      },
+      {
+        "kind": "file",
+        "path": "astro.config.mjs"
+      },
+      {
+        "kind": "directory",
+        "path": "src/"
+      },
+      {
+        "kind": "directory",
+        "path": "public/"
+      },
+      {
+        "kind": "file",
+        "path": ".github/workflows/deploy.yml"
+      }
+    ],
+    "id": "001-site-scaffold",
+    "implementation": "pending",
+    "sectionHeadings": [
+      "001: Site scaffold",
+      "1. Purpose",
+      "2. Behavior",
+      "3. Acceptance",
+      "4. Out of scope"
+    ],
+    "specPath": "specs/001-site-scaffold/spec.md",
+    "status": "approved",
+    "summary": "The marketing and docs site for the Stagecraft product family, built as a fully static Astro site deployed to GitHub Pages under the custom domain stagecraft.ing. This spec owns the scaffold: framework, layout system, deploy pipeline, and domain wiring. Content lives in spec 002 so the two can be implemented by separate sessions.\n",
+    "title": "stagecraft.ing: Astro static site, Pages deploy, custom domain"
+  },
+  "shardHash": "689e9c86429887de641c3e849a9b46147e7e75a5928dd64ee2364548f4481a3e",
+  "specVersion": "1.1.0"
+}

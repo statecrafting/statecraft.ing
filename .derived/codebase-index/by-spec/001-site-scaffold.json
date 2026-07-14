@@ -1,0 +1,89 @@
+{
+  "diagnostics": {
+    "errors": [],
+    "warnings": [
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' file unit 'package.json' does not exist",
+        "path": "package.json"
+      },
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' file unit 'astro.config.mjs' does not exist",
+        "path": "astro.config.mjs"
+      },
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' directory unit 'src/' is not a directory",
+        "path": "src/"
+      },
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' directory unit 'public/' is not a directory",
+        "path": "public/"
+      },
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' file unit '.github/workflows/deploy.yml' does not exist",
+        "path": ".github/workflows/deploy.yml"
+      }
+    ]
+  },
+  "mapping": {
+    "dependsOn": [
+      "000-bootstrap"
+    ],
+    "implementingPaths": [],
+    "resolvedUnits": [
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "directory",
+          "path": "public/"
+        }
+      },
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "directory",
+          "path": "src/"
+        }
+      },
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": ".github/workflows/deploy.yml"
+        }
+      },
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "astro.config.mjs"
+        }
+      },
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "package.json"
+        }
+      }
+    ],
+    "specId": "001-site-scaffold",
+    "specStatus": "approved"
+  },
+  "schemaVersion": "1.1.0",
+  "shardHash": "d84479eaa005da235bb7b7c10471768c8eb980aac9c408706c1fa4b8acf27a63"
+}
