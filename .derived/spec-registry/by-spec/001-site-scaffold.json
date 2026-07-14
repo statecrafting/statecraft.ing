@@ -11,15 +11,23 @@
       },
       {
         "kind": "file",
-        "path": "astro.config.mjs"
+        "path": "react-router.config.ts"
+      },
+      {
+        "kind": "file",
+        "path": "vite.config.ts"
       },
       {
         "kind": "directory",
-        "path": "src/"
+        "path": "app/"
       },
       {
         "kind": "directory",
         "path": "public/"
+      },
+      {
+        "kind": "directory",
+        "path": "scripts/"
       },
       {
         "kind": "file",
@@ -31,15 +39,16 @@
     "sectionHeadings": [
       "001: Site scaffold",
       "1. Purpose",
-      "2. Behavior",
-      "3. Acceptance",
-      "4. Out of scope"
+      "2. Harvest source (requires operator-granted read access)",
+      "3. Behavior",
+      "4. Acceptance",
+      "5. Out of scope"
     ],
     "specPath": "specs/001-site-scaffold/spec.md",
     "status": "approved",
-    "summary": "The marketing and docs site for the Stagecraft product family, built as a fully static Astro site deployed to GitHub Pages under the custom domain stagecraft.ing. This spec owns the scaffold: framework, layout system, deploy pipeline, and domain wiring. Content lives in spec 002 so the two can be implemented by separate sessions.\n",
-    "title": "stagecraft.ing: Astro static site, Pages deploy, custom domain"
+    "summary": "The marketing and docs site, built as a fully static React Router v7 app (framework mode, prerendered, no SSR at runtime) deployed to GitHub Pages under stagecraft.ing. Amended 2026-07-14: React Router v7 replaces the earlier Astro choice, harvesting the OAP-era stagecraft web app (ecosystem content, the spec-registry viewer) and keeping the whole product family on one frontend stack. The registry viewer runs over build-time-baked shards from the public repos, so the site stays static and every claim stays checkable. The apex DNS cutover is authorized: the legacy control plane no longer owns the domain.\n",
+    "title": "stagecraft.ing: React Router v7 static site, Pages deploy, apex cutover"
   },
-  "shardHash": "689e9c86429887de641c3e849a9b46147e7e75a5928dd64ee2364548f4481a3e",
+  "shardHash": "a6d83c3ec056b3346b87b32c6800d8e77c5f9faef4d55d8a99e1fad219350d37",
   "specVersion": "1.1.0"
 }

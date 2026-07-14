@@ -9,18 +9,28 @@
       },
       {
         "code": "W-001",
-        "message": "spec '001-site-scaffold' file unit 'astro.config.mjs' does not exist",
-        "path": "astro.config.mjs"
+        "message": "spec '001-site-scaffold' file unit 'react-router.config.ts' does not exist",
+        "path": "react-router.config.ts"
       },
       {
         "code": "W-001",
-        "message": "spec '001-site-scaffold' directory unit 'src/' is not a directory",
-        "path": "src/"
+        "message": "spec '001-site-scaffold' file unit 'vite.config.ts' does not exist",
+        "path": "vite.config.ts"
+      },
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' directory unit 'app/' is not a directory",
+        "path": "app/"
       },
       {
         "code": "W-001",
         "message": "spec '001-site-scaffold' directory unit 'public/' is not a directory",
         "path": "public/"
+      },
+      {
+        "code": "W-001",
+        "message": "spec '001-site-scaffold' directory unit 'scripts/' is not a directory",
+        "path": "scripts/"
       },
       {
         "code": "W-001",
@@ -41,6 +51,15 @@
         "sourceField": "establishes",
         "unit": {
           "kind": "directory",
+          "path": "app/"
+        }
+      },
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "directory",
           "path": "public/"
         }
       },
@@ -50,7 +69,7 @@
         "sourceField": "establishes",
         "unit": {
           "kind": "directory",
-          "path": "src/"
+          "path": "scripts/"
         }
       },
       {
@@ -68,7 +87,7 @@
         "sourceField": "establishes",
         "unit": {
           "kind": "file",
-          "path": "astro.config.mjs"
+          "path": "package.json"
         }
       },
       {
@@ -77,7 +96,16 @@
         "sourceField": "establishes",
         "unit": {
           "kind": "file",
-          "path": "package.json"
+          "path": "react-router.config.ts"
+        }
+      },
+      {
+        "locations": [],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "vite.config.ts"
         }
       }
     ],
@@ -85,5 +113,5 @@
     "specStatus": "approved"
   },
   "schemaVersion": "1.1.0",
-  "shardHash": "70f3be7154784601239f4c65e4463e0be0faf5bde588867ab9d116e4c0641f5e"
+  "shardHash": "db45d34a457c37facfe2b46de20c4e1cc0f414d33f1c74889d6fe85597d7a639"
 }

@@ -31,7 +31,7 @@ spec-spine is an installed CLI tool that governs this repo's spec corpus. In thi
 | Surface | Path | Tech |
 |---------|------|------|
 | Spec corpus | `specs/NNN-slug/spec.md` | Markdown + YAML frontmatter |
-| Site code | `src/`, `public/`, `astro.config.mjs`, `.github/workflows/deploy.yml` | Astro static site, TypeScript, content collections (planned by spec 001; pre-code until 001 lands) |
+| Site code | `app/`, `public/`, `react-router.config.ts`, `vite.config.ts`, `.github/workflows/deploy.yml` | React Router v7 static site (framework mode, prerendered), TypeScript (planned by spec 001; pre-code until 001 lands) |
 | Standard | `standards/spec/{constitution.md,contract.md,templates/}` | Principles, contract, templates |
 | Derived | `.derived/` | Compiler output (registry, index), committed shards |
 
@@ -45,7 +45,7 @@ Understand what information is needed and which pages, components, or specs are 
 
 ### 2. Search Broadly, Then Narrow
 
-- Use `Glob` to find files by pattern (e.g. `src/**/*.astro`, `specs/*/spec.md`)
+- Use `Glob` to find files by pattern (e.g. `app/**/*.tsx`, `specs/*/spec.md`)
 - Use `Grep` to search for symbols, strings, or patterns across the repo
 - Use `Read` to examine specific files once located
 - Use `Bash` for package manager metadata, `git log`, or structural queries

@@ -50,6 +50,11 @@ reads naturally (a single creator builds this in the open).
 - **For agents**: a short section stating the MCP face: coding agents
   operate under the same governance as humans (same verbs, same
   guards, explicit posture, no side doors).
+- **Live registry**: a pointer section to the `/registry` viewer
+  (spec 001): the product family's spec corpora rendered from
+  build-time-baked shards, each page stating the source commit it was
+  baked from. This is the "evaluate us by reading source" claim made
+  navigable.
 - **Status** (kept truthful at every deploy): the milestone ladder
   M1-M5 with current position, linking each milestone to the public
   spec that governs it. At authoring time: M1 done (template contract

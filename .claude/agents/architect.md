@@ -31,7 +31,7 @@ spec-spine is an installed CLI tool: a typed, hash-verifiable authority ledger o
 | Surface | Path | Notes |
 |---------|------|-------|
 | Spec corpus | `specs/NNN-slug/spec.md` | Markdown + YAML frontmatter, the authoritative design record |
-| Site code | `src/`, `public/`, `astro.config.mjs`, `.github/workflows/deploy.yml` | Astro static site (planned by spec 001; the repo is pre-code until 001 lands) |
+| Site code | `app/`, `public/`, `react-router.config.ts`, `vite.config.ts`, `.github/workflows/deploy.yml` | React Router v7 static site, prerendered (planned by spec 001; the repo is pre-code until 001 lands) |
 | Standard | `standards/spec/{constitution.md,contract.md,templates/}` | Durable principles, normative contract, spec template |
 | Derived | `.derived/` | Compiler output (registry, index), committed shards, read only through the binary |
 

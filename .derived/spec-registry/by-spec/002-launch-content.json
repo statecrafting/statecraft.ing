@@ -25,6 +25,6 @@
     "summary": "The words on the site at launch. One index page that states what Stagecraft is in the builder's own register (creator-led, OSS-credible, no startup theater), a product-family section mapping the four repos and their licenses, and an honest status section tied to the public milestone ladder. The positioning facts are inlined here so the implementing session needs no external archive.\n",
     "title": "Launch content: positioning, product family, honest status"
   },
-  "shardHash": "9129d50aa8dc130821251adf468e7a22a7ba3cd2668057aca82ac8ee457f2556",
+  "shardHash": "0de10d1c4212ebaf86dc5f9a74818367313a81e203dccb2fdba400bf12a32bd4",
   "specVersion": "1.1.0"
 }

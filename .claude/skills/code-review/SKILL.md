@@ -22,7 +22,7 @@ git diff HEAD --stat                 # uncommitted delta
 ```
 
 Note which classes changed: site code (`src/`, `public/`,
-`astro.config.mjs`, `package.json`), specs (`specs/**/spec.md`),
+`react-router.config.ts`, `vite.config.ts`, `package.json`), specs (`specs/**/spec.md`),
 schemas/standards (`standards/**`), docs (`*.md`), workflows
 (`.github/**`), kit (`.claude/**`).
 

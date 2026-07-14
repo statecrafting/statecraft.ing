@@ -3,7 +3,7 @@
 ## Project Overview
 
 The marketing and docs site for the Stagecraft product family: a fully
-static Astro site deployed to GitHub Pages under stagecraft.ing. The
+static React Router v7 site (framework mode, prerendered, harvesting the OAP-era stagecraft web app and its spec-registry viewer) deployed to GitHub Pages under stagecraft.ing. The
 scaffold is governed by `specs/001-site-scaffold/spec.md`, the launch
 copy by `specs/002-launch-content/spec.md`. No backend, no analytics,
 no runtime external requests: the site must never become operational
@@ -18,7 +18,7 @@ standards/   spec-spine constitution, contract, templates
 .claude/     rules (orchestrator, governed reads, adversarial refusal)
 ```
 
-Planned by spec 001: `src/`, `public/`, `astro.config.mjs`,
+Planned by spec 001: `app/`, `public/`, `scripts/`, `react-router.config.ts`, `vite.config.ts`,
 `.github/workflows/deploy.yml`.
 
 ## Governance

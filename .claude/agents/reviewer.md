@@ -31,7 +31,7 @@ spec-spine is an installed CLI tool that governs this repo's spec corpus. In thi
 | Surface | Path | Key concerns |
 |---------|------|--------------|
 | Spec corpus | `specs/NNN-slug/spec.md` | Frontmatter schema, compiler compatibility, relationship edges, status flips |
-| Site code | `src/`, `public/`, `astro.config.mjs`, `.github/workflows/deploy.yml` | Correctness, static-only constraint, content rules, workflow pinning |
+| Site code | `app/`, `public/`, `react-router.config.ts`, `vite.config.ts`, `.github/workflows/deploy.yml` | Correctness, static-only constraint, content rules, workflow pinning |
 | Standard | `standards/spec/` | Contract and constitution alignment |
 | Derived | `.derived/` | Must not be hand-edited; only `spec-spine compile` / `index` output, committed shards |
 
@@ -48,7 +48,7 @@ spec-spine is an installed CLI tool that governs this repo's spec corpus. In thi
 For each changed file:
 - **Logic errors**: broken conditionals, wrong frontmatter keys, malformed content collection entries
 - **Rendering errors**: pages that fail `npm run build`, missing layout imports, unclosed markup
-- **Type safety**: TypeScript errors, unjustified `any`, config drift against `astro.config.mjs`
+- **Type safety**: TypeScript errors, unjustified `any`, config drift against `react-router.config.ts` or `vite.config.ts`
 - **API contracts**: do changes keep routes and anchors stable? Do pages match their spec?
 
 ### 3. Review for Security
