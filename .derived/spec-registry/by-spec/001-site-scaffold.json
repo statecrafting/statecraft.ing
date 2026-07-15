@@ -35,7 +35,7 @@
       }
     ],
     "id": "001-site-scaffold",
-    "implementation": "in-progress",
+    "implementation": "complete",
     "sectionHeadings": [
       "001: Site scaffold",
       "1. Purpose",
@@ -43,13 +43,13 @@
       "3. Behavior",
       "4. Acceptance",
       "5. Out of scope",
-      "6. Status (2026-07-14)"
+      "6. Status (2026-07-14): complete, live at https://stagecraft.ing"
     ],
     "specPath": "specs/001-site-scaffold/spec.md",
     "status": "approved",
     "summary": "The marketing and docs site, built as a fully static React Router v7 app (framework mode, prerendered, no SSR at runtime) deployed to GitHub Pages under stagecraft.ing. Amended 2026-07-14: React Router v7 replaces the earlier Astro choice, harvesting the OAP-era stagecraft web app (ecosystem content, the spec-registry viewer) and keeping the whole product family on one frontend stack. The registry viewer runs over build-time-baked shards from the public repos, so the site stays static and every claim stays checkable. The apex DNS cutover is authorized: the legacy control plane no longer owns the domain.\n",
     "title": "stagecraft.ing: React Router v7 static site, Pages deploy, apex cutover"
   },
-  "shardHash": "44975d8ebe4921a87ef5a8ff9ddb99167a9656263ca86300d1837630212a9f59",
+  "shardHash": "b49f22920be2a1d5873fe38da81d44466129e9422159399541c6f41c3dc4e69f",
   "specVersion": "1.1.0"
 }

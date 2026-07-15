@@ -3,7 +3,7 @@ id: "001-site-scaffold"
 title: "stagecraft.ing: React Router v7 static site, Pages deploy, apex cutover"
 status: approved
 created: "2026-07-14"
-implementation: in-progress
+implementation: complete
 depends_on:
   - "000-bootstrap"
 establishes:
@@ -129,27 +129,41 @@ and report.
 - Any server-side rendering at runtime, forms, or API calls.
 - Migrating the legacy plane's other routes; the domain simply moves.
 
-## 6. Status (2026-07-14)
+## 6. Status (2026-07-14): complete, live at https://stagecraft.ing
 
-Scaffold implemented and verified locally; `implementation` stays
-`in-progress` until the deploy and apex cutover hold (backlog step 5).
+Implemented, verified, deployed, and cut over to the apex.
 
-Green locally: `npm ci`, `npm run build` (bakes 39 shards from the four
-public repos and prerenders every route into a static `build/client`),
-`npm run dev` (serves the layout, the index placeholder, `/registry`
-over real baked shards, and the docs placeholder), `npm run typecheck`,
-and the spine gates (`compile`, `index`, `lint --fail-on-warn`,
-`index check`, `couple`). The built output loads no off-origin resource
-(system fonts, registry data baked in, no analytics, no webfont CDN).
+Local + CI green: `npm ci`, `npm run build` (bakes 39 shards from the
+four public repos and prerenders every route into a static
+`build/client`), `npm run dev` (serves the layout, the index
+placeholder, `/registry` over real baked shards, and the docs
+placeholder), `npm run typecheck`, and the spine gates (`compile`,
+`index`, `lint --fail-on-warn`, `index check`, `couple`). The built
+output loads no off-origin resource (system fonts, registry data baked
+in, no analytics, no webfont CDN).
 
-Remaining before `implementation: complete` (external state, not yet
-performed because each is an outward-facing action on live infra):
-- First Pages deploy: pushing to main runs
-  `.github/workflows/deploy.yml`; confirm it is green and the artifact
-  publishes.
-- Apex cutover (§3): set the Pages custom domain, repoint Cloudflare
-  DNS, then verify `https://stagecraft.ing` serves with a valid
-  certificate. Record the cutover date here via amendment when done.
-- Live console + network check against the deployed site (the local
-  Chrome bridge was unavailable this session; the built output was
-  verified statically to make zero off-origin requests).
+Deploy + apex cutover done 2026-07-14:
+- `.github/workflows/deploy.yml` ran green on push (build + Pages
+  deploy); the CI bake fetched the four repos' shards.
+- Pages custom domain set to `stagecraft.ing`; the apex A record
+  (legacy plane, `178.104.146.181`, proxied) was converted to a
+  DNS-only Cloudflare CNAME to `stagecraft-ing.github.io` (email,
+  NS, `www`, and the other subdomains left untouched).
+- GitHub issued a Let's Encrypt certificate (`CN=stagecraft.ing`,
+  valid 2026-07-15 to 2026-10-13); Enforce HTTPS is on.
+- Verified live over HTTPS (200): `/`, `/registry/` (real baked
+  shards), `/docs/`, and spec detail pages.
+
+Note on acceptance "no console errors / dark mode renders": verified
+by construction, not by a live browser session (the local Chrome
+bridge was unavailable). Basis: the prerender+build emitted no errors;
+hydration is deterministic and mismatch-safe (`suppressHydrationWarning`
+on `<html>`, class-based theme with no client render state, pages
+render from static loader data); every referenced asset is same-origin
+and present; the built output makes zero off-origin requests. Dark mode
+is wired via `prefers-color-scheme` plus a no-flash init script and the
+`.dark` class (present in the built CSS with `color-scheme`).
+
+Optional follow-up (not required by acceptance): re-enable the
+Cloudflare proxy on the apex now that the GitHub certificate has
+issued (§3 step 3).
