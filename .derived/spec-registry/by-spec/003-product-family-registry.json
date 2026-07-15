@@ -1,0 +1,35 @@
+{
+  "record": {
+    "created": "2026-07-15",
+    "dependsOn": [
+      "001-site-scaffold",
+      "002-launch-content"
+    ],
+    "establishes": [
+      {
+        "kind": "file",
+        "path": "app/lib/product-family.ts"
+      }
+    ],
+    "id": "003-product-family-registry",
+    "implementation": "complete",
+    "origin": {
+      "retroactive": true
+    },
+    "sectionHeadings": [
+      "003: Product-family registry",
+      "1. Purpose",
+      "2. Territory",
+      "3. The roster",
+      "4. Acceptance",
+      "5. Out of scope",
+      "6. Status (2026-07-15): complete"
+    ],
+    "specPath": "specs/003-product-family-registry/spec.md",
+    "status": "approved",
+    "summary": "The canonical registry of the Stagecraft product family: each repo's name, role, SPDX license, and URL, encoded once in app/lib/product-family.ts and consumed by the index family section, the footer, and the /registry viewer's repoMeta lookup. This spec gives that module a single explicit owner so a roster change (a repo added, removed, or re-described) is an ordinary authoring edit here plus the module, with no coupling waiver and no edit to the scaffold (001) or launch-content (002) specs. It owns the roster data, not the rendering.\n",
+    "title": "Product-family registry: a single owner for the shared repo list"
+  },
+  "shardHash": "cb8d0cd1171faee3ce246ccacab44f0ecdceca15d9c52d962ca22250e0e51cb8",
+  "specVersion": "1.1.0"
+}
