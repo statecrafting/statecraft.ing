@@ -16,6 +16,18 @@ the governed agentic delivery control plane, and its product family:
 - [tenant-tail](https://github.com/stagecraft-ing/tenant-tail): the tenant
   certificate verifier, re-checking the factory's paperwork with no trust in
   the producer (Apache-2.0)
+- [action-gate](https://github.com/stagecraft-ing/action-gate): a pure,
+  deterministic decision gate, evaluate(context, checks) returning Allow, Deny,
+  or Degrade (Apache-2.0)
+- [attest-ledger](https://github.com/stagecraft-ing/attest-ledger): a
+  tamper-evident record ledger, append-only, hash-linked, Ed25519-signed, with
+  an independent verifier (Apache-2.0)
+- [canonical-keysort-json](https://github.com/stagecraft-ing/canonical-keysort-json):
+  deterministic canonical JSON, a lexicographic key sort at the serialization
+  boundary so record hashes agree (Apache-2.0)
+- [trust-window](https://github.com/stagecraft-ing/trust-window): a
+  rolling-window trust scorer, weighted samples mapping to a graduated privilege
+  level (Apache-2.0)
 
 Site content and stack land here later; this placeholder marks the repo's
 role (the dotted-name convention: this repo is the website).

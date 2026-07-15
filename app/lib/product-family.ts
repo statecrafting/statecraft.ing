@@ -63,6 +63,34 @@ export const REPO_META: Record<string, RepoMeta> = {
     role: "the tenant certificate verifier: re-checks the factory's paperwork, no trust in the producer",
     url: `${ORG_URL}/tenant-tail`,
   },
+  "action-gate": {
+    repo: "action-gate",
+    name: "action-gate",
+    license: "Apache-2.0",
+    role: "a pure, deterministic decision gate: evaluate(context, checks) returns Allow, Deny, or Degrade",
+    url: `${ORG_URL}/action-gate`,
+  },
+  "attest-ledger": {
+    repo: "attest-ledger",
+    name: "attest-ledger",
+    license: "Apache-2.0",
+    role: "a tamper-evident record ledger: append-only, hash-linked, Ed25519-signed, with an independent verifier",
+    url: `${ORG_URL}/attest-ledger`,
+  },
+  "canonical-keysort-json": {
+    repo: "canonical-keysort-json",
+    name: "canonical-keysort-json",
+    license: "Apache-2.0",
+    role: "deterministic canonical JSON: a lexicographic key sort at the serialization boundary, so record hashes agree",
+    url: `${ORG_URL}/canonical-keysort-json`,
+  },
+  "trust-window": {
+    repo: "trust-window",
+    name: "trust-window",
+    license: "Apache-2.0",
+    role: "a rolling-window trust scorer: weighted samples map to a graduated privilege level",
+    url: `${ORG_URL}/trust-window`,
+  },
   "stagecraft.ing": {
     repo: "stagecraft.ing",
     name: "stagecraft.ing",
@@ -80,6 +108,10 @@ export const PRODUCT_FAMILY: RepoMeta[] = [
   REPO_META["spec-spine"],
   REPO_META["tenant-emit"],
   REPO_META["tenant-tail"],
+  REPO_META["action-gate"],
+  REPO_META["attest-ledger"],
+  REPO_META["canonical-keysort-json"],
+  REPO_META["trust-window"],
 ];
 
 export function repoMeta(repo: string): RepoMeta | undefined {
