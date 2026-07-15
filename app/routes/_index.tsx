@@ -246,7 +246,7 @@ function ProductFamily() {
     <section className="mt-16">
       <SectionEyebrow>product family</SectionEyebrow>
       <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-        Four repos, one stack
+        {PRODUCT_FAMILY.length} repos, one stack
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground">
         Everything is open source and governed the same way. Apps the factory
