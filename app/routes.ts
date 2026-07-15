@@ -15,5 +15,6 @@ export default [
     route("registry", "routes/registry.tsx"),
     route("registry/:repo/:specId", "routes/registry.$repo.$specId.tsx"),
     route("docs", "routes/docs.tsx"),
+    route("docs/:slug", "routes/docs.$slug.tsx"),
   ]),
 ] satisfies RouteConfig;

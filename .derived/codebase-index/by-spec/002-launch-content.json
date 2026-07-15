@@ -1,27 +1,94 @@
 {
-  "diagnostics": {
-    "errors": [],
-    "warnings": [
-      {
-        "code": "W-001",
-        "message": "spec '002-launch-content' directory unit 'src/content/' is not a directory",
-        "path": "src/content/"
-      }
-    ]
-  },
   "mapping": {
     "dependsOn": [
       "001-site-scaffold"
     ],
-    "implementingPaths": [],
+    "implementingPaths": [
+      {
+        "path": "app/lib/docs.ts",
+        "source": "spec-edge"
+      },
+      {
+        "path": "app/lib/milestones.ts",
+        "source": "spec-edge"
+      },
+      {
+        "path": "app/routes/_index.tsx",
+        "source": "spec-edge"
+      },
+      {
+        "path": "app/routes/docs.$slug.tsx",
+        "source": "spec-edge"
+      },
+      {
+        "path": "app/routes/docs.tsx",
+        "source": "spec-edge"
+      }
+    ],
     "resolvedUnits": [
       {
-        "locations": [],
+        "locations": [
+          {
+            "file": "app/lib/docs.ts"
+          }
+        ],
         "ownership": true,
         "sourceField": "establishes",
         "unit": {
-          "kind": "directory",
-          "path": "src/content/"
+          "kind": "file",
+          "path": "app/lib/docs.ts"
+        }
+      },
+      {
+        "locations": [
+          {
+            "file": "app/lib/milestones.ts"
+          }
+        ],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "app/lib/milestones.ts"
+        }
+      },
+      {
+        "locations": [
+          {
+            "file": "app/routes/_index.tsx"
+          }
+        ],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "app/routes/_index.tsx"
+        }
+      },
+      {
+        "locations": [
+          {
+            "file": "app/routes/docs.$slug.tsx"
+          }
+        ],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "app/routes/docs.$slug.tsx"
+        }
+      },
+      {
+        "locations": [
+          {
+            "file": "app/routes/docs.tsx"
+          }
+        ],
+        "ownership": true,
+        "sourceField": "establishes",
+        "unit": {
+          "kind": "file",
+          "path": "app/routes/docs.tsx"
         }
       }
     ],
@@ -29,5 +96,5 @@
     "specStatus": "approved"
   },
   "schemaVersion": "1.1.0",
-  "shardHash": "9f37ede0e6a8719a1c8e17b9f2840017f6e269de2624356307fcaf5b94153dd5"
+  "shardHash": "b89aa769c2379525b9536a49fe574bfcb8244e05beca67bf76c014551f112e07"
 }
