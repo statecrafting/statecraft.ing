@@ -3,11 +3,15 @@ id: "002-launch-content"
 title: "Launch content: positioning, product family, honest status"
 status: approved
 created: "2026-07-14"
-implementation: pending
+implementation: complete
 depends_on:
   - "001-site-scaffold"
 establishes:
-  - { kind: directory, path: "src/content/" }
+  - "app/routes/_index.tsx"
+  - "app/routes/docs.tsx"
+  - "app/routes/docs.$slug.tsx"
+  - "app/lib/docs.ts"
+  - "app/lib/milestones.ts"
 summary: >
   The words on the site at launch. One index page that states what
   Stagecraft is in the builder's own register (creator-led,
@@ -18,6 +22,32 @@ summary: >
 ---
 
 # 002: Launch content
+
+## 0. Implementation amendment (2026-07-14)
+
+Two design points, settled before coding, so the spec matches the code
+it owns:
+
+- **Content architecture is React Router v7, not Astro.** The original
+  `establishes: src/content/` was residue from the dropped Astro choice
+  (spec 001 was itself amended 2026-07-14 to RR7). The launch content
+  lives in the RR7 app tree: the index page (`app/routes/_index.tsx`),
+  a docs index (`app/routes/docs.tsx`), a docs stub route
+  (`app/routes/docs.$slug.tsx`), and two typed content modules
+  (`app/lib/docs.ts`, `app/lib/milestones.ts`). No markdown/MDX
+  toolchain is introduced: that would be a runtime-of-the-build
+  dependency the site does not need, and §1's voice constraints are
+  better served by typed content than by a content collection.
+- **The status ladder is derived from the baked registry, never
+  hardcoded.** §2's "Status" reads its per-milestone position by rolling
+  up the `implementation` field of the constituent specs in the
+  build-time-baked payload (`public/data/registry.json`), so it re-derives
+  on every deploy and cannot drift from source. The authoring-time hint
+  ("M1 done: born-green stamp proven") is explicitly superseded by that
+  rule: at implementation time the registry shows `enrahitu/009-template-contract`
+  is `in-progress` and `enrahitu/012-born-with-provenance` is `pending`,
+  so the born-with stamp is not yet proven. The ladder reflects the
+  registry truth (§6), not the hint.
 
 ## 1. Voice constraints
 
@@ -65,10 +95,13 @@ reads naturally (a single creator builds this in the open).
 
 ## 3. Docs seed
 
-Move the placeholder docs page into three real stubs sourced from the
-repos' own READMEs (do not fork prose; link and summarize): "What is
-EnRaHiTu", "The template contract", "Self-hosting the control plane
-(AGPL)".
+Turn the single placeholder docs page (`app/routes/docs.tsx`) into an
+index over three real stubs, each rendered by `app/routes/docs.$slug.tsx`
+from `app/lib/docs.ts`, sourced from the repos' own READMEs and specs (do
+not fork prose; link and summarize): "What is EnRaHiTu", "The template
+contract", "Self-hosting the control plane (AGPL)". Where a stub describes
+work that is spec-approved but not yet built (the control plane), it says
+so in future tense and points at the governing specs, per §1.
 
 ## 4. Acceptance
 
@@ -82,3 +115,39 @@ EnRaHiTu", "The template contract", "Self-hosting the control plane
 
 - Pricing, waitlists, email capture.
 - Long-form architecture essays (belong in the repos' specs/docs).
+
+## 6. Status (2026-07-14): complete
+
+Implemented and verified. The launch content replaces the spec-001
+placeholders; no new build toolchain was added.
+
+- **Index** (`app/routes/_index.tsx`): hero (the loop stated as thesis +
+  the EnRaHiTu substrate line), the four-block loop (Specify / Stamp /
+  Operate / Verify, each linking to the spec that governs it), the
+  product-family list (from `app/lib/product-family.ts`, licenses shown,
+  with the note that stamped apps belong to their owners), a "for agents"
+  block pointing at the MCP server spec, a live-registry pointer, and the
+  status ladder.
+- **Status ladder** (`app/lib/milestones.ts`): M1-M5 mapped to real
+  sibling-repo spec ids; the loader rolls each rung up from the baked
+  payload at build time. Verified truth at implementation time: **M1
+  Substrate 8/8 → shipped** (`enrahitu/001`-`008` complete); **M2 Stamp
+  0/2 → in progress** (`enrahitu/009` in-progress, `enrahitu/012`
+  pending); **M3 Factory**, **M4 Fleet**, **M5 Verify** → planned
+  (`stagecraft/*`, `stagecraft-cli/*` approved, pending). This supersedes
+  the §0 authoring hint: the born-with stamp is not yet proven, so the
+  ladder does not claim it.
+- **Docs** (`app/routes/docs.tsx` index + `app/routes/docs.$slug.tsx` +
+  `app/lib/docs.ts`): three stubs (What is EnRaHiTu, The template
+  contract, Self-hosting the control plane (AGPL)), each summarizing and
+  linking its source, with an honest maturity marker; the control-plane
+  stub is marked planned per §1.
+
+Acceptance: every claim links to a public repo or a baked spec id (the
+ladder is a pure function of the baked shards); `npm run typecheck` and
+`npm run build` are clean (all routes prerendered, including the three new
+docs pages); every internal link resolves (all linked registry/docs paths
+prerender to 200); the built output makes zero off-origin resource
+requests; the skim test holds (what it is, what runs today, and the
+licenses are all answerable from the index). Spine gates green (`compile`,
+`index`, `lint --fail-on-warn`, `index check`).

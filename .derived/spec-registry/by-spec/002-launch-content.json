@@ -6,25 +6,43 @@
     ],
     "establishes": [
       {
-        "kind": "directory",
-        "path": "src/content/"
+        "kind": "file",
+        "path": "app/routes/_index.tsx"
+      },
+      {
+        "kind": "file",
+        "path": "app/routes/docs.tsx"
+      },
+      {
+        "kind": "file",
+        "path": "app/routes/docs.$slug.tsx"
+      },
+      {
+        "kind": "file",
+        "path": "app/lib/docs.ts"
+      },
+      {
+        "kind": "file",
+        "path": "app/lib/milestones.ts"
       }
     ],
     "id": "002-launch-content",
-    "implementation": "pending",
+    "implementation": "complete",
     "sectionHeadings": [
       "002: Launch content",
+      "0. Implementation amendment (2026-07-14)",
       "1. Voice constraints",
       "2. Content inventory (index page)",
       "3. Docs seed",
       "4. Acceptance",
-      "5. Out of scope"
+      "5. Out of scope",
+      "6. Status (2026-07-14): complete"
     ],
     "specPath": "specs/002-launch-content/spec.md",
     "status": "approved",
     "summary": "The words on the site at launch. One index page that states what Stagecraft is in the builder's own register (creator-led, OSS-credible, no startup theater), a product-family section mapping the four repos and their licenses, and an honest status section tied to the public milestone ladder. The positioning facts are inlined here so the implementing session needs no external archive.\n",
     "title": "Launch content: positioning, product family, honest status"
   },
-  "shardHash": "0de10d1c4212ebaf86dc5f9a74818367313a81e203dccb2fdba400bf12a32bd4",
+  "shardHash": "7b9884fbd42e2bae5bd569294aeb0c596cbb29e0efa1290cd3777ece462cd6b3",
   "specVersion": "1.1.0"
 }

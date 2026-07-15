@@ -1,6 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { DOC_STUBS } from "./app/lib/docs";
 
 // Static site, framework mode. `ssr: false` means no runtime server; every
 // route is prerendered to HTML at build time (loaders run in Node during the
@@ -30,9 +31,21 @@ function registryDetailPaths(): string[] {
   }
 }
 
+// The docs stubs (spec 002 §3) are a static content module, so their prerender
+// paths come straight from it: one /docs/:slug page per stub, no drift.
+function docsPaths(): string[] {
+  return DOC_STUBS.map((doc) => `/docs/${doc.slug}`);
+}
+
 export default {
   ssr: false,
   async prerender() {
-    return ["/", "/registry", "/docs", ...registryDetailPaths()];
+    return [
+      "/",
+      "/registry",
+      "/docs",
+      ...docsPaths(),
+      ...registryDetailPaths(),
+    ];
   },
 } satisfies Config;
