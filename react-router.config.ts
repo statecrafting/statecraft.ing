@@ -2,6 +2,7 @@ import type { Config } from "@react-router/dev/config";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { DOC_STUBS } from "./app/lib/docs";
+import { readerPapers } from "./app/lib/papers";
 
 // Static site, framework mode. `ssr: false` means no runtime server; every
 // route is prerendered to HTML at build time (loaders run in Node during the
@@ -37,13 +38,24 @@ function docsPaths(): string[] {
   return DOC_STUBS.map((doc) => `/docs/${doc.slug}`);
 }
 
+// The marketing papers (spec 004 §3.4) are a static content module too: one
+// /papers/:slug page per paper, enumerated from it so the prerender list cannot
+// drift from the corpus.
+function paperPaths(): string[] {
+  return readerPapers.map((paper) => `/papers/${paper.slug}`);
+}
+
 export default {
   ssr: false,
   async prerender() {
     return [
       "/",
+      "/products",
+      "/papers",
+      "/get-started",
       "/registry",
       "/docs",
+      ...paperPaths(),
       ...docsPaths(),
       ...registryDetailPaths(),
     ];
