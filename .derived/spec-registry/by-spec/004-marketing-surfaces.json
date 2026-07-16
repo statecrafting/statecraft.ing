@@ -84,6 +84,7 @@
       }
     ],
     "id": "004-marketing-surfaces",
+    "implementation": "complete",
     "sectionHeadings": [
       "004: Rich marketing surfaces",
       "1. Purpose",
@@ -97,13 +98,13 @@
       "3.6 Static and dependency posture",
       "4. Acceptance",
       "5. Out of scope",
-      "6. Status (2026-07-16): in progress"
+      "6. Status (2026-07-16): complete"
     ],
     "specPath": "specs/004-marketing-surfaces/spec.md",
     "status": "approved",
     "summary": "Restores the richer marketing experience the OAP-era stagecraft web app carried, ported onto the static apex: a products/architecture page, a papers index with a full whitepaper reader (sticky TOC, reading-progress, scroll-spy, inline references) and an interactive clickable-SVG architecture explorer, and a get-started walkthrough. It expands the site chrome (Products, Papers, Get Started in the nav) and adds a sign-in link that hands off to the control plane's Rauthy OIDC flow at app.stagecraft.ing/auth/rauthy. All content is re-authored to be truthful and checkable against the current public repos (no fabricated hashes, spec counts, signatures, or dead subsystems): the OAP name becomes Stagecraft, and factory-encore / template-encore become enrahitu. The site stays fully static and prerendered, with zero runtime off-origin requests; sign-in is a plain outbound link, not an auth flow this site runs.\n",
     "title": "Rich marketing surfaces: products, whitepaper, get-started, sign-in"
   },
-  "shardHash": "2cbfcdda99c05400a095a0563a9cbd5f66fa774ddac6a79ba6dd8da2547ced1d",
+  "shardHash": "3448aef607e5b5bf973fa2570dc2717d151c9b47d4a6d751b8a187f90da808c2",
   "specVersion": "1.1.0"
 }

@@ -3,6 +3,7 @@ id: "004-marketing-surfaces"
 title: "Rich marketing surfaces: products, whitepaper, get-started, sign-in"
 status: approved
 created: "2026-07-16"
+implementation: complete
 depends_on:
   - "001-site-scaffold"
   - "002-launch-content"
@@ -194,7 +195,33 @@ unchanged.
   runtime data fetch.
 - Blog, search, versioned docs, PDF generation.
 
-## 6. Status (2026-07-16): in progress
+## 6. Status (2026-07-16): complete
 
-Implementation underway this session. Flip to complete when section 4
-holds end to end.
+Implemented and verified; section 4 holds end to end.
+
+- **Surfaces**: `/products` (layers, a registry-derived delivery flow, the
+  spec-003 repo catalog), `/papers` plus the whitepaper reader at
+  `/papers/stagecraft-ecosystem` (sticky TOC, reading-progress, scroll-spy,
+  inline references, a positioning table, three interactive architecture
+  explorers), and `/get-started` (runs-today vs on-the-ladder, every step
+  linked to its governing spec). Chrome gained Products, Papers, Get Started,
+  and a Sign in link to `https://app.stagecraft.ing/auth/rauthy`.
+- **Honesty**: content re-authored around the real family; no fabricated
+  hash, signature, spec count, or dead subsystem in any user-facing surface.
+  Maturity is rolled up from the baked registry wherever it is shown (the
+  products delivery flow mirrors the home page ladder: Specify shipped,
+  Stamp in progress, Operate shipped, Verify shipped), so the copy cannot
+  drift from the specs. The stamp and self-host steps link to genuinely
+  in-progress specs (`enrahitu/009-template-contract`,
+  `stagecraft/009-control-plane-deploy`).
+- **Gates**: `npm run typecheck` clean; `npm run build` prerenders every new
+  route; `spec-spine compile`, `index`, `lint --fail-on-warn`, `index check`
+  green; `spec-spine couple --base origin/main` reports 17 paths checked, no
+  drift, no waiver (this spec owns the new files and extends 001 on the
+  wiring). Icons are inline SVG; the built output makes zero runtime
+  off-origin requests.
+
+Deploy is gated by human approval: main auto-deploys to the live apex, so
+the change ships in PR #6 and awaits merge. Sign-in is a real hand-off once
+`app.stagecraft.ing` is deployed with a valid certificate; until then the
+link reaches the control-plane host's own (in-progress) state.
