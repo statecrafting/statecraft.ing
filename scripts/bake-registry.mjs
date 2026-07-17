@@ -1,4 +1,4 @@
-// Bake the governed spec registries of the Stagecraft product family into a
+// Bake the governed spec registries of the Statecraft product family into a
 // single static payload the site prerenders and serves.
 //
 // Spec 001 §3 ("Registry viewer, static edition"): raw.githubusercontent
@@ -14,8 +14,8 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
-const ORG = "stagecraft-ing";
-const REPOS = ["enrahitu", "stagecraft", "stagecraft-cli", "stagecraft.ing"];
+const ORG = "statecrafting";
+const REPOS = ["enrahitu", "statecraft", "statecraft-cli", "statecraft.ing"];
 const SHARD_DIR = ".derived/spec-registry/by-spec";
 const OUT_PATH = path.join(process.cwd(), "public", "data", "registry.json");
 
@@ -24,7 +24,7 @@ const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
 function apiHeaders() {
   const h = {
     Accept: "application/vnd.github+json",
-    "User-Agent": "stagecraft-ing-bake-registry",
+    "User-Agent": "statecrafting-bake-registry",
     "X-GitHub-Api-Version": "2022-11-28",
   };
   if (TOKEN) h.Authorization = `Bearer ${TOKEN}`;

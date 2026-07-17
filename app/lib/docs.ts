@@ -55,7 +55,7 @@ export const DOC_STUBS: DocStub[] = [
       },
     ],
     links: [
-      { label: "enrahitu on GitHub", href: "https://github.com/stagecraft-ing/enrahitu" },
+      { label: "enrahitu on GitHub", href: "https://github.com/statecrafting/enrahitu" },
       {
         label: "001: architecture spec",
         href: "/registry/enrahitu/001-enrahitu-architecture",
@@ -104,13 +104,13 @@ export const DOC_STUBS: DocStub[] = [
     title: "Self-hosting the control plane (AGPL)",
     summary:
       "What AGPL-3.0 means for the plane, what you can run today, and what is on the ladder.",
-    repo: "stagecraft",
+    repo: "statecraft",
     maturity: "planned",
     sections: [
       {
         heading: "AGPL-3.0, and what it covers",
         body: [
-          "The control plane (stagecraft) is AGPL-3.0: you can run it and modify it, and network users are entitled to the source of your running version. The AGPL covers the plane, not what the plane stamps. Apps the factory stamps are the customer's own code, in the customer's own GitHub org, under whatever license the customer chooses.",
+          "The control plane (statecraft) is AGPL-3.0: you can run it and modify it, and network users are entitled to the source of your running version. The AGPL covers the plane, not what the plane stamps. Apps the factory stamps are the customer's own code, in the customer's own GitHub org, under whatever license the customer chooses.",
         ],
       },
       {
@@ -122,14 +122,14 @@ export const DOC_STUBS: DocStub[] = [
       },
     ],
     links: [
-      { label: "stagecraft on GitHub", href: "https://github.com/stagecraft-ing/stagecraft" },
+      { label: "statecraft on GitHub", href: "https://github.com/statecrafting/statecraft" },
       {
         label: "001: the control-plane thesis",
-        href: "/registry/stagecraft/001-stagecraft-thesis",
+        href: "/registry/statecraft/001-statecraft-thesis",
       },
       {
         label: "002: the EnRaHiTu app shell",
-        href: "/registry/stagecraft/002-app-shell",
+        href: "/registry/statecraft/002-app-shell",
       },
     ],
   },

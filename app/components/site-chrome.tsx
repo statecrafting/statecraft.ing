@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { ThemeToggle } from "./theme-toggle";
+import { SignInLink } from "./sign-in-link";
 import { ORG_URL, PRODUCT_FAMILY } from "~/lib/product-family";
 
 const NAV_ITEMS = [
   { path: "/", label: "Overview" },
+  { path: "/products", label: "Products" },
+  { path: "/papers", label: "Papers" },
   { path: "/registry", label: "Registry" },
   { path: "/docs", label: "Docs" },
+  { path: "/get-started", label: "Get Started" },
 ];
 
 function isActive(pathname: string, path: string) {
@@ -37,7 +41,7 @@ function Wordmark() {
     <Link to="/" className="group flex items-center gap-2">
       <Logo className="h-5 w-5 text-primary transition-all group-hover:text-glow" />
       <span className="font-mono text-sm font-bold tracking-tight">
-        Stagecraft
+        Statecraft
       </span>
     </Link>
   );
@@ -98,19 +102,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <span className="spec-chip hidden md:inline-flex">
+          <span className="spec-chip hidden xl:inline-flex">
             <span className="pulse-dot" />
             spec-governed
           </span>
           <ThemeToggle />
-          <a
-            href={`${ORG_URL}/stagecraft`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground sm:inline-flex"
-          >
-            GitHub
-          </a>
+          <SignInLink className="hidden rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground sm:inline-flex">
+            Sign in
+          </SignInLink>
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
@@ -141,6 +140,10 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <div className="my-2 h-px bg-border/50" />
+          <SignInLink className="block rounded-lg border border-border px-4 py-3 text-center text-sm font-medium text-muted-foreground hover:border-primary/50 hover:text-foreground">
+            Sign in
+          </SignInLink>
         </nav>
       )}
     </header>

@@ -13,7 +13,7 @@ import {
 import { repoMeta } from "~/lib/product-family";
 
 export function meta({ data }: Route.MetaArgs): Route.MetaDescriptors {
-  if (!data) return [{ title: "Spec not found: Stagecraft" }];
+  if (!data) return [{ title: "Spec not found: Statecraft" }];
   return [
     { title: `${data.spec.id}: ${data.spec.title}` },
     {

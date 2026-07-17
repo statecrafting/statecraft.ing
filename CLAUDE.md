@@ -1,9 +1,9 @@
-# CLAUDE.md: stagecraft.ing
+# CLAUDE.md: statecraft.ing
 
 ## Project Overview
 
-The marketing and docs site for the Stagecraft product family: a fully
-static React Router v7 site (framework mode, prerendered, harvesting the OAP-era stagecraft web app and its spec-registry viewer) deployed to GitHub Pages under stagecraft.ing. The
+The marketing and docs site for the Statecraft product family: a fully
+static React Router v7 site (framework mode, prerendered, harvesting the OAP-era statecraft web app and its spec-registry viewer) deployed to GitHub Pages under statecraft.ing. The
 scaffold is governed by `specs/001-site-scaffold/spec.md`, the launch
 copy by `specs/002-launch-content/spec.md`. No backend, no analytics,
 no runtime external requests: the site must never become operational

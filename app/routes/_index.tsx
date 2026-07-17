@@ -22,7 +22,7 @@ import { ORG_URL, PRODUCT_FAMILY } from "~/lib/product-family";
 
 export function meta(_: Route.MetaArgs): Route.MetaDescriptors {
   return [
-    { title: "Stagecraft: governed agentic delivery control plane" },
+    { title: "Statecraft: governed agentic delivery control plane" },
     {
       name: "description",
       content:
@@ -66,22 +66,22 @@ const LOOP: Array<{
     verb: "Operate",
     title: "Update and backup are verbs",
     body: "One container and one volume per app. Governed verbs carry an audit trail, instead of a runbook you hope someone followed.",
-    href: "/registry/stagecraft/006-fleet",
+    href: "/registry/statecraft/006-fleet",
     receipt: "the fleet spec",
-    ref: { repo: "stagecraft", id: "006-fleet" },
+    ref: { repo: "statecraft", id: "006-fleet" },
   },
   {
     verb: "Verify",
     title: "The record is checkable",
     body: "A tamper-evident attestation ledger records what the plane did, and an independent verifier can check it without trusting the plane.",
-    href: "/registry/stagecraft/008-governance-attestation",
+    href: "/registry/statecraft/008-governance-attestation",
     receipt: "the governance spine",
-    ref: { repo: "stagecraft", id: "008-governance-attestation" },
+    ref: { repo: "statecraft", id: "008-governance-attestation" },
   },
 ];
 
 // The for-agents block resolves its maturity from the MCP server spec.
-const AGENT_REF = { repo: "stagecraft-cli", id: "005-mcp-server" };
+const AGENT_REF = { repo: "statecraft-cli", id: "005-mcp-server" };
 
 // Runs in Node during prerender (ssr: false). Rolls the milestone ladder and
 // the per-block maturity chips up from the baked registry and passes only the
@@ -157,9 +157,9 @@ function Hero() {
         <span className="pulse-dot" />
         governed agentic delivery control plane
       </p>
-      <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Stagecraft</h1>
+      <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">Statecraft</h1>
       <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground/90 sm:text-xl">
-        Stagecraft is built around one governed loop: intent becomes a governed
+        Statecraft is built around one governed loop: intent becomes a governed
         spec, a factory stamps a complete application from an open template, a
         fleet operates the result, and your code stays in your GitHub org the
         whole time.
@@ -178,7 +178,7 @@ function Hero() {
           Browse the registry
         </Link>
         <a
-          href={`${ORG_URL}/stagecraft`}
+          href={`${ORG_URL}/statecraft`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center rounded-md border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"

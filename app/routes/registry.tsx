@@ -12,11 +12,11 @@ import { repoMeta } from "~/lib/product-family";
 
 export function meta(_: Route.MetaArgs): Route.MetaDescriptors {
   return [
-    { title: "Spec registry: Stagecraft" },
+    { title: "Spec registry: Statecraft" },
     {
       name: "description",
       content:
-        "The governed spec registries of the Stagecraft product family, baked at build time from each repo's compiled shards. Every entry links to its source spec.",
+        "The governed spec registries of the Statecraft product family, baked at build time from each repo's compiled shards. Every entry links to its source spec.",
     },
   ];
 }

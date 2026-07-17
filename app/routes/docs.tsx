@@ -9,11 +9,11 @@ import { repoMeta } from "~/lib/product-family";
 
 export function meta(_: Route.MetaArgs): Route.MetaDescriptors {
   return [
-    { title: "Docs: Stagecraft" },
+    { title: "Docs: Statecraft" },
     {
       name: "description",
       content:
-        "Documentation for the Stagecraft product family, sourced from each repo's own specs: what EnRaHiTu is, the template contract, and self-hosting the control plane.",
+        "Documentation for the Statecraft product family, sourced from each repo's own specs: what EnRaHiTu is, the template contract, and self-hosting the control plane.",
     },
   ];
 }

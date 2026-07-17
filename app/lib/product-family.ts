@@ -1,8 +1,8 @@
-// The Stagecraft product family: the source of truth for repo names, roles,
+// The Statecrafting product family: the source of truth for repo names, roles,
 // licenses, and URLs used by the site chrome and the registry viewer. Every
 // license here is checkable against the LICENSE file in the named repo.
 
-export const ORG = "stagecraft-ing";
+export const ORG = "statecrafting";
 export const ORG_URL = `https://github.com/${ORG}`;
 
 export interface RepoMeta {
@@ -21,12 +21,12 @@ export interface RepoMeta {
 // Keyed lookup covering every repo the site references (registry sources + the
 // governance toolchain + this site itself).
 export const REPO_META: Record<string, RepoMeta> = {
-  stagecraft: {
-    repo: "stagecraft",
-    name: "Stagecraft",
+  statecraft: {
+    repo: "statecraft",
+    name: "Statecraft",
     license: "AGPL-3.0",
     role: "the governed delivery control plane",
-    url: `${ORG_URL}/stagecraft`,
+    url: `${ORG_URL}/statecraft`,
   },
   enrahitu: {
     repo: "enrahitu",
@@ -35,12 +35,12 @@ export const REPO_META: Record<string, RepoMeta> = {
     role: "the EnRaHiTu template chassis (Encore.ts + rauthy + hiqlite + Turso)",
     url: `${ORG_URL}/enrahitu`,
   },
-  "stagecraft-cli": {
-    repo: "stagecraft-cli",
-    name: "stagecraft-cli",
+  "statecraft-cli": {
+    repo: "statecraft-cli",
+    name: "statecraft-cli",
     license: "Apache-2.0",
     role: "the CLI and MCP server",
-    url: `${ORG_URL}/stagecraft-cli`,
+    url: `${ORG_URL}/statecraft-cli`,
   },
   "spec-spine": {
     repo: "spec-spine",
@@ -91,20 +91,20 @@ export const REPO_META: Record<string, RepoMeta> = {
     role: "a rolling-window trust scorer: weighted samples map to a graduated privilege level",
     url: `${ORG_URL}/trust-window`,
   },
-  "stagecraft.ing": {
-    repo: "stagecraft.ing",
-    name: "stagecraft.ing",
+  "statecraft.ing": {
+    repo: "statecraft.ing",
+    name: "statecraft.ing",
     license: "",
     role: "this site: the marketing and docs front door",
-    url: `${ORG_URL}/stagecraft.ing`,
+    url: `${ORG_URL}/statecraft.ing`,
   },
 };
 
 // The repos shown as the product family in the footer (README order).
 export const PRODUCT_FAMILY: RepoMeta[] = [
-  REPO_META["stagecraft"],
+  REPO_META["statecraft"],
   REPO_META["enrahitu"],
-  REPO_META["stagecraft-cli"],
+  REPO_META["statecraft-cli"],
   REPO_META["spec-spine"],
   REPO_META["tenant-emit"],
   REPO_META["tenant-tail"],

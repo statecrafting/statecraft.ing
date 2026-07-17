@@ -7,9 +7,9 @@ import { repoMeta } from "~/lib/product-family";
 // react-router.config.ts enumerates one /docs/:slug path per stub.
 
 export function meta({ data }: Route.MetaArgs): Route.MetaDescriptors {
-  if (!data) return [{ title: "Doc not found: Stagecraft" }];
+  if (!data) return [{ title: "Doc not found: Statecraft" }];
   return [
-    { title: `${data.doc.title}: Stagecraft docs` },
+    { title: `${data.doc.title}: Statecraft docs` },
     { name: "description", content: data.doc.summary },
   ];
 }

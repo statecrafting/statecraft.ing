@@ -14,7 +14,7 @@ establishes:
   - "app/lib/milestones.ts"
 summary: >
   The words on the site at launch. One index page that states what
-  Stagecraft is in the builder's own register (creator-led,
+  Statecraft is in the builder's own register (creator-led,
   OSS-credible, no startup theater), a product-family section
   presenting the roster owned by spec 003, and an honest status section
   tied to the public milestone ladder. The positioning facts are inlined
@@ -59,7 +59,7 @@ reads naturally (a single creator builds this in the open).
 
 ## 2. Content inventory (index page)
 
-- **Hero**: Stagecraft is a governed delivery control plane: intent
+- **Hero**: Statecraft is a governed delivery control plane: intent
   becomes a governed spec, a factory stamps a complete application
   from an open template, a fleet operates the result, and the
   customer's code lives in the customer's GitHub org the whole time.
@@ -140,7 +140,7 @@ placeholders; no new build toolchain was added.
   Substrate 8/8 → shipped** (`enrahitu/001`-`008` complete); **M2 Stamp
   0/2 → in progress** (`enrahitu/009` in-progress, `enrahitu/012`
   pending); **M3 Factory**, **M4 Fleet**, **M5 Verify** → planned
-  (`stagecraft/*`, `stagecraft-cli/*` approved, pending). This supersedes
+  (`statecraft/*`, `statecraft-cli/*` approved, pending). This supersedes
   the §0 authoring hint: the born-with stamp is not yet proven, so the
   ladder does not claim it.
 - **Docs** (`app/routes/docs.tsx` index + `app/routes/docs.$slug.tsx` +

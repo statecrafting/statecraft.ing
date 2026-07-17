@@ -12,7 +12,7 @@ depends_on:
 establishes:
   - "app/lib/product-family.ts"
 summary: >
-  The canonical registry of the Stagecraft product family: each repo's
+  The canonical registry of the Statecraft product family: each repo's
   name, role, SPDX license, and URL, encoded once in
   app/lib/product-family.ts and consumed by the index family section, the
   footer, and the /registry viewer's repoMeta lookup. This spec gives that
@@ -63,15 +63,15 @@ repo-list change. This spec removes that recurring friction.
 
 ## 3. The roster
 
-Ten public repositories under the `stagecraft-ing` org, each checkable
+Ten public repositories under the `statecrafting` org, each checkable
 against its own repo; the license is the SPDX id in that repo's LICENSE.
-Each URL is `https://github.com/stagecraft-ing/<repo>`.
+Each URL is `https://github.com/statecrafting/<repo>`.
 
 | repo | role | license |
 | --- | --- | --- |
-| stagecraft | the governed delivery control plane | AGPL-3.0 |
+| statecraft | the governed delivery control plane | AGPL-3.0 |
 | enrahitu | the EnRaHiTu template chassis (Encore.ts + rauthy + hiqlite + Turso) | Apache-2.0 |
-| stagecraft-cli | the CLI and MCP server | Apache-2.0 |
+| statecraft-cli | the CLI and MCP server | Apache-2.0 |
 | spec-spine | the spec-governance toolchain everything above is governed by | Apache-2.0 |
 | tenant-emit | the tenant certificate emitter | Apache-2.0 |
 | tenant-tail | the tenant certificate verifier | Apache-2.0 |
@@ -80,7 +80,7 @@ Each URL is `https://github.com/stagecraft-ing/<repo>`.
 | canonical-keysort-json | canonical JSON at the hash boundary | Apache-2.0 |
 | trust-window | the rolling-window trust scorer | Apache-2.0 |
 
-`REPO_META` also carries a `stagecraft.ing` entry (this site, unlicensed)
+`REPO_META` also carries a `statecraft.ing` entry (this site, unlicensed)
 as a lookup convenience; it is not part of the public roster above.
 
 ## 4. Acceptance

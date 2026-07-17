@@ -16,11 +16,11 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export const meta: Route.MetaFunction = () => [
-  { title: "Stagecraft" },
+  { title: "Statecraft" },
   {
     name: "description",
     content:
-      "Stagecraft is a governed agentic delivery control plane and its product family. Spec-governed, open source, static by construction.",
+      "Statecraft is a governed agentic delivery control plane and its product family. Spec-governed, open source, static by construction.",
   },
 ];
 

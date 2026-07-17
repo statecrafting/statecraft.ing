@@ -21,7 +21,7 @@ in `.github/workflows/spec-spine.yml`; match it):
 ```bash
 cargo install spec-spine-cli            # from crates.io (needs a Rust toolchain)
 # or, no Rust toolchain: the prebuilt installer CI uses
-curl -fsSL https://raw.githubusercontent.com/stagecraft-ing/spec-spine/main/install.sh | \
+curl -fsSL https://raw.githubusercontent.com/statecrafting/spec-spine/main/install.sh | \
   SPEC_SPINE_VERSION=v0.10.0 SPEC_SPINE_BIN_DIR="$HOME/.local/bin" sh
 ```
 
@@ -69,7 +69,7 @@ re-check. Do not parse `.derived/**/*.json` directly to "verify" success.
 Report exactly:
 
 ```
-## setup: stagecraft.ing
+## setup: statecraft.ing
 
 **Install:** {ok / failed at <step>}
 **Node:** {node <version> + npm <version> / absent (needed once spec 001 lands)}

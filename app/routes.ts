@@ -12,6 +12,12 @@ import {
 export default [
   layout("layouts/site.tsx", [
     index("routes/_index.tsx"),
+    // Rich marketing surfaces (spec 004): products, papers + whitepaper reader,
+    // get-started. Extends the spec-001 route table without disturbing it.
+    route("products", "routes/products.tsx"),
+    route("papers", "routes/papers.tsx"),
+    route("papers/:slug", "routes/papers.$slug.tsx"),
+    route("get-started", "routes/get-started.tsx"),
     route("registry", "routes/registry.tsx"),
     route("registry/:repo/:specId", "routes/registry.$repo.$specId.tsx"),
     route("docs", "routes/docs.tsx"),

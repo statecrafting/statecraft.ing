@@ -15,7 +15,7 @@ Claude Code, Codex CLI, Cursor, Copilot, and any future agent).
    `## ` heading exclusive. That section is the step list.
 2. Execute the protocol described there, using parallel tool calls where steps
    are independent.
-3. Emit a structured summary as a `## initialized: stagecraft.ing` block:
+3. Emit a structured summary as a `## initialized: statecraft.ing` block:
    rules loaded, registry freshness, lifecycle counts (from
    `spec-spine registry status-report --json --nonzero-only`), and the next
    pending spec per `AGENTS.md` § Working the backlog.

@@ -43,8 +43,8 @@ export interface MilestoneRollup {
   specs: ResolvedSpec[];
 }
 
-// The ladder. Every id here exists in the baked registry (enrahitu, stagecraft,
-// stagecraft-cli); the viewer renders a detail page for each, so every rung is
+// The ladder. Every id here exists in the baked registry (enrahitu, statecraft,
+// statecraft-cli); the viewer renders a detail page for each, so every rung is
 // navigable to its source. Order is the delivery order, not the loop order.
 // Each rung lists the headline specs for its phase, not the repo's full corpus:
 // the point is an honest position on the ladder, not an exhaustive index (the
@@ -85,12 +85,12 @@ export const MILESTONES: Milestone[] = [
     phase: "Factory",
     title: "The control plane stamps apps",
     blurb:
-      "Stagecraft itself: the thesis, the EnRaHiTu app shell, tenant onboarding via a per-org GitHub App, and the factory that stamps complete apps into the customer's own org.",
+      "Statecraft itself: the thesis, the EnRaHiTu app shell, tenant onboarding via a per-org GitHub App, and the factory that stamps complete apps into the customer's own org.",
     specs: [
-      { repo: "stagecraft", id: "001-stagecraft-thesis" },
-      { repo: "stagecraft", id: "002-app-shell" },
-      { repo: "stagecraft", id: "004-tenants-github-app" },
-      { repo: "stagecraft", id: "005-factory-service" },
+      { repo: "statecraft", id: "001-statecraft-thesis" },
+      { repo: "statecraft", id: "002-app-shell" },
+      { repo: "statecraft", id: "004-tenants-github-app" },
+      { repo: "statecraft", id: "005-factory-service" },
     ],
   },
   {
@@ -99,19 +99,19 @@ export const MILESTONES: Milestone[] = [
     title: "The fleet operates the result",
     blurb:
       "Placing and running stamped EnRaHiTu apps: one container and one volume each, with update and backup as governed verbs rather than runbooks.",
-    specs: [{ repo: "stagecraft", id: "006-fleet" }],
+    specs: [{ repo: "statecraft", id: "006-fleet" }],
   },
   {
     key: "M5",
     phase: "Verify",
     title: "The governance spine and the CLI face",
     blurb:
-      "A tamper-evident attestation ledger with an action gate and trust window, and the stagecraft binary that drives the same governed verbs from the terminal and over MCP.",
+      "A tamper-evident attestation ledger with an action gate and trust window, and the statecraft binary that drives the same governed verbs from the terminal and over MCP.",
     specs: [
-      { repo: "stagecraft", id: "008-governance-attestation" },
-      { repo: "stagecraft-cli", id: "001-cli-mcp-thesis" },
-      { repo: "stagecraft-cli", id: "004-governance-verbs" },
-      { repo: "stagecraft-cli", id: "005-mcp-server" },
+      { repo: "statecraft", id: "008-governance-attestation" },
+      { repo: "statecraft-cli", id: "001-cli-mcp-thesis" },
+      { repo: "statecraft-cli", id: "004-governance-verbs" },
+      { repo: "statecraft-cli", id: "005-mcp-server" },
     ],
   },
 ];
