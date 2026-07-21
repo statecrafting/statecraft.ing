@@ -102,9 +102,9 @@
     ],
     "specPath": "specs/004-marketing-surfaces/spec.md",
     "status": "approved",
-    "summary": "Restores the richer marketing experience the OAP-era statecraft web app carried, ported onto the static apex: a products/architecture page, a papers index with a full whitepaper reader (sticky TOC, reading-progress, scroll-spy, inline references) and an interactive clickable-SVG architecture explorer, and a get-started walkthrough. It expands the site chrome (Products, Papers, Get Started in the nav) and adds a sign-in link that hands off to the control plane's Rauthy OIDC flow at app.statecraft.ing/auth/rauthy. All content is re-authored to be truthful and checkable against the current public repos (no fabricated hashes, spec counts, signatures, or dead subsystems): the OAP name becomes Statecraft, and factory-encore / template-encore become enrahitu. The site stays fully static and prerendered, with zero runtime off-origin requests; sign-in is a plain outbound link, not an auth flow this site runs.\n",
+    "summary": "Restores the richer marketing experience the OAP-era statecraft web app carried, ported onto the static apex: a products/architecture page, a papers index with a full whitepaper reader (sticky TOC, reading-progress, scroll-spy, inline references) and an interactive clickable-SVG architecture explorer, and a get-started walkthrough. It expands the site chrome (Products, Papers, Get Started in the nav) and adds a sign-in link that hands off to the control plane's login initiator at app.statecraft.ing/api/v1/auth/login. All content is re-authored to be truthful and checkable against the current public repos (no fabricated hashes, spec counts, signatures, or dead subsystems): the OAP name becomes Statecraft, and factory-encore / template-encore become enrahitu. The site stays fully static and prerendered, with zero runtime off-origin requests; sign-in is a plain outbound link, not an auth flow this site runs.\n",
     "title": "Rich marketing surfaces: products, whitepaper, get-started, sign-in"
   },
-  "shardHash": "3448aef607e5b5bf973fa2570dc2717d151c9b47d4a6d751b8a187f90da808c2",
+  "shardHash": "d9657ee52f8b1c641079278a7eb2921e121a080d584da65e18685bb9fd2725ce",
   "specVersion": "1.1.0"
 }

@@ -35,8 +35,8 @@ summary: >
   scroll-spy, inline references) and an interactive clickable-SVG
   architecture explorer, and a get-started walkthrough. It expands the site
   chrome (Products, Papers, Get Started in the nav) and adds a sign-in link
-  that hands off to the control plane's Rauthy OIDC flow at
-  app.statecraft.ing/auth/rauthy. All content is re-authored to be truthful
+  that hands off to the control plane's login initiator at
+  app.statecraft.ing/api/v1/auth/login. All content is re-authored to be truthful
   and checkable against the current public repos (no fabricated hashes,
   spec counts, signatures, or dead subsystems): the OAP name becomes
   Statecraft, and factory-encore / template-encore become enrahitu. The
@@ -103,15 +103,25 @@ the header (and the mobile drawer), rendered by `sign-in-link.tsx`.
 
 ### 3.2 Sign-in
 
-Sign-in is an outbound link to `https://app.statecraft.ing/auth/rauthy`:
-the same `/auth/rauthy` OIDC kickoff path the app used before the apex
-cutover, now on the control-plane host (the static apex no longer serves
-it). This site runs no auth flow, sets no cookie, and reads no session; it
-hands off to the control plane, which owns identity (Rauthy is the live
-OIDC signer). The link is a plain absolute URL so it works identically in
-prerendered HTML with no client JavaScript. If the control plane is not
-deployed at that host yet, the link simply leads to the plane's own
-status; this site makes no claim that sign-in succeeds.
+Sign-in is an outbound link to `https://app.statecraft.ing/api/v1/auth/login`,
+the control plane's driver-agnostic login initiator: it 302s to the active
+auth driver's OIDC kickoff (rauthy today), so this link survives a driver
+change without an edit here. This site runs no auth flow, sets no cookie, and
+reads no session; it hands off to the control plane, which owns identity
+(Rauthy is the live OIDC signer). The link is a plain absolute URL so it works
+identically in prerendered HTML with no client JavaScript. If the control
+plane is not deployed at that host yet, the link simply leads to the plane's
+own status; this site makes no claim that sign-in succeeds.
+
+**Corrected 2026-07-21.** This first pointed at `https://app.statecraft.ing/auth/rauthy`,
+described as "the same `/auth/rauthy` OIDC kickoff path the app used before the
+apex cutover". That was wrong on the live control plane: `/auth/rauthy` is the
+rauthy proxy passthrough, not a login route, and a top-level navigation to it
+is refused by rauthy's own CSRF guard with a `BadRequest` /
+"cross-origin request forbidden for this resource". The login initiator is
+`/api/v1/auth/login`, which is what the app's own sign-in button uses and which
+permits cross-site navigation. Verified live: the old path returns the CSRF
+refusal, the new one 302s through to `/oidc/authorize`.
 
 ### 3.3 Products / architecture (`/products`)
 
@@ -168,7 +178,7 @@ unchanged.
   and `/get-started` into static HTML; `npm run typecheck` is clean.
 - The header and mobile nav expose Products, Papers, Get Started, and a
   Sign in link; the Sign in link resolves to
-  `https://app.statecraft.ing/auth/rauthy`.
+  `https://app.statecraft.ing/api/v1/auth/login`.
 - The whitepaper reader renders the flagship paper with a working TOC,
   reading-progress, references, and at least one interactive architecture
   diagram.
@@ -205,7 +215,7 @@ Implemented and verified; section 4 holds end to end.
   inline references, a positioning table, three interactive architecture
   explorers), and `/get-started` (runs-today vs on-the-ladder, every step
   linked to its governing spec). Chrome gained Products, Papers, Get Started,
-  and a Sign in link to `https://app.statecraft.ing/auth/rauthy`.
+  and a Sign in link to `https://app.statecraft.ing/api/v1/auth/login`.
 - **Honesty**: content re-authored around the real family; no fabricated
   hash, signature, spec count, or dead subsystem in any user-facing surface.
   Maturity is rolled up from the baked registry wherever it is shown (the
