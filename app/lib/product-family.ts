@@ -91,6 +91,13 @@ export const REPO_META: Record<string, RepoMeta> = {
     role: "a rolling-window trust scorer: weighted samples map to a graduated privilege level",
     url: `${ORG_URL}/trust-window`,
   },
+  statecrafting: {
+    repo: "statecrafting",
+    name: "statecrafting",
+    license: "Apache-2.0",
+    role: "the shared native packages: the @statecrafting/* napi addons and the Encore build toolchain",
+    url: `${ORG_URL}/statecrafting`,
+  },
   "statecraft.ing": {
     repo: "statecraft.ing",
     name: "statecraft.ing",
@@ -112,6 +119,7 @@ export const PRODUCT_FAMILY: RepoMeta[] = [
   REPO_META["attest-ledger"],
   REPO_META["canonical-keysort-json"],
   REPO_META["trust-window"],
+  REPO_META["statecrafting"],
 ];
 
 export function repoMeta(repo: string): RepoMeta | undefined {

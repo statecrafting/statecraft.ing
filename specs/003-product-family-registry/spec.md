@@ -63,7 +63,7 @@ repo-list change. This spec removes that recurring friction.
 
 ## 3. The roster
 
-Ten public repositories under the `statecrafting` org, each checkable
+Eleven public repositories under the `statecrafting` org, each checkable
 against its own repo; the license is the SPDX id in that repo's LICENSE.
 Each URL is `https://github.com/statecrafting/<repo>`.
 
@@ -79,13 +79,18 @@ Each URL is `https://github.com/statecrafting/<repo>`.
 | attest-ledger | the tamper-evident, hash-linked record ledger | Apache-2.0 |
 | canonical-keysort-json | canonical JSON at the hash boundary | Apache-2.0 |
 | trust-window | the rolling-window trust scorer | Apache-2.0 |
+| statecrafting | the shared native packages (the @statecrafting/* napi addons and the Encore toolchain) | Apache-2.0 |
+
+The `statecrafting` repo's root LICENSE is Apache-2.0 (the org-scope
+default); two of its packages carry AGPL-3.0 per-package licenses, which
+the repo's own spec corpus documents.
 
 `REPO_META` also carries a `statecraft.ing` entry (this site, unlicensed)
 as a lookup convenience; it is not part of the public roster above.
 
 ## 4. Acceptance
 
-- `app/lib/product-family.ts` encodes exactly these ten repos, in this
+- `app/lib/product-family.ts` encodes exactly these eleven repos, in this
   order, with these licenses; each role is a faithful one-line summary of
   the repo's own description (the module may phrase it more fully).
 - A subsequent roster edit (this section 3 plus the module) passes
@@ -110,3 +115,7 @@ spec declares ownership rather than creating the file, hence
 `origin.retroactive: true`. No code change ships with this spec; the
 module already matches section 3. The next roster edit couples cleanly
 against this spec instead of requiring a waiver.
+
+2026-07-23: first such roster edit; the `statecrafting` packages repo
+(the @statecrafting/* napi addons and the Encore toolchain) joins as the
+eleventh member, coupled here plus the module, no waiver.
